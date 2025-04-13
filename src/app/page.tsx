@@ -8,6 +8,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { ChevronDown } from 'lucide-react';
+import ProjectShowcase from "@/components/ProjectShowcase";
 
 export default function Home() {
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.3 });
@@ -169,8 +170,29 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects" className="min-h-screen bg-transparent flex items-center justify-center p-10">
-          <p className="text-2xl">프로젝트</p>
+        <section id="projects" className="min-h-screen bg-transparent px-6 py-24 flex flex-col items-center gap-12">
+        <ProjectShowcase
+          title="TotokTotok"
+          description="주변 사람들이 “책을 읽고 싶어도 습관이 안 된다”는 고민에서 출발해, 독서 습관 형성을 돕는 모바일 앱을 기획·개발했습니다.
+Flutter로 구현된 이 앱은 사용자가 읽고 있는 책의 진행률을 시각화하고, 한 줄 리뷰와 읽은 페이지 수를 기록하며 동기를 부여합니다.
+교보문고 Open API를 활용해 책 정보를 자동으로 불러오고, 실시간 저장 기능과 직관적인 UI를 통해 사용성이 강조된 구조를 구현했습니다."
+          mediaType="image"
+          mediaSrc="/todok_1.png"
+          techStack={['Flutter', 'Dart', 'Kyobo API']}
+          reverse={false}
+        />
+
+        <ProjectShowcase
+          title="WOWMARKET"
+          description="대학별 굿즈 제작이 활발하지만 거래는 에브리타임, 오픈카톡 등에서 분산되어 이루어져 비효율적인 점에 주목했습니다.
+학생들이 직접 제작한 굿즈를 손쉽게 등록하고, 타겟 소비자(같은 학교 학생들)가 모여 사고팔 수 있는 대학 굿즈 전용 커머스 웹서비스를 기획 및 프론트엔드로 구현했습니다.
+학교별 상품 분류와 수요조사 기능을 도입해, 판매자는 정확한 타겟팅이 가능하고 구매자는 깔끔한 UI를 통해 손쉽게 탐색할 수 있도록 했습니다.
+React와 JavaScript 기반으로 구현했으며, 반응형 UI, 조건별 필터링, 상품 등록/관리 기능 등을 중심으로 개발했습니다."
+          mediaType="video"
+          mediaSrc="/videos/wowmarket_video.mp4"
+          techStack={['React', 'JavaScript', 'CSS']}
+          reverse={true}
+        />
         </section>
       </div>
       <footer className="bg-transparent text-white text-sm p-6 flex flex-col items-center space-y-2">
