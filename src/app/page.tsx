@@ -1,8 +1,12 @@
 'use client';
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function Home() {
+  const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.3 });
+
   return (
     <div className="font-[family-name:var(--font-geist-sans)] text-white">
       <header className="fixed top-0 left-0 w-full bg-[#0a1e3f] text-white z-50 shadow-md font-bold font-mono">
@@ -27,50 +31,56 @@ export default function Home() {
             </h1>
             <p className="text-xl mt-4">프론트엔드 개발자</p>
         </section>
-        <section id="about" className="min-h-screen bg-[#1b1956] flex items-center justify-center px-4 py-24">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 w-full max-w-2xl text-white flex flex-col sm:flex-row gap-8">
-          <div className="flex-shrink-0 flex justify-center sm:justify-start">
-            <Image
-              src="/profile_no_bg.png"
-              alt="정윤지 프로필"
-              width={180}
-              height={160}
-              className="rounded-full border-2 border-white/20 shadow-md"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-4">
-            <h2 className="text-3xl font-bold">정윤지</h2>
-            <p className="text-lg leading-relaxed">
-              안녕하세요! 프론트엔드, 모바일 개발자 정윤지입니다.  
-              Next.js, TypeScript를 사용한 웹 프론트엔드와 Flutter를 사용한 모바일 앱 개발을 합니다.
-            </p>
-            <div className="text-sm text-white/80 mt-2 space-y-1">
-              <p className="px-4 py-2 text-black rounded-full bg-white w-fit">
-                🎓 홍익대학교 컴퓨터공학과
-              </p>
-              <p>
-                <a
-                    href="mailto:jungyungee0610@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-5 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
-                  >
-                  📧 jungyungee0610@gmail.com
-                  </a>
-              </p>
-              <p>
-                <a
-                  href="https://github.com/jungyungee"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-5 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
-                >
-                💼 GitHub
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
+        <section id="about" className="bg-[#1b1956] flex items-center justify-center px-4 py-24">
+          <motion.div
+            ref={aboutRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 w-full max-w-4xl text-white flex flex-col sm:flex-row gap-8"
+          >
+                <div className="flex-shrink-0 flex justify-center sm:justify-start">
+                  <Image
+                    src="/profile.JPG"
+                    alt="정윤지 프로필"
+                    width={260}
+                    height={150}
+                    className="rounded-full border-4 shadow-lg object-cover"
+                  />
+                </div>
+                <div className="flex flex-col justify-center gap-4">
+                  <h2 className="text-3xl font-bold">정윤지</h2>
+                  <p className="text-lg leading-relaxed">
+                    안녕하세요! 프론트엔드, 모바일 개발자 정윤지입니다.<br />
+                    Next.js, TypeScript, React를 사용한 웹 프론트엔드와 Flutter를 사용한 모바일 앱 개발을 합니다.
+                  </p>
+                  <div className="text-sm text-white/80 mt-2 space-y-1">
+                    <p className="px-4 py-2 text-black rounded-full bg-white w-fit">
+                      🎓 홍익대학교 컴퓨터공학과
+                    </p>
+                    <p>
+                      <a
+                          href="mailto:jungyungee0610@gmail.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block px-5 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+                        >
+                        📧 jungyungee0610@gmail.com
+                        </a>
+                    </p>
+                    <p>
+                      <a
+                        href="https://github.com/jungyungee"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-5 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+                      >
+                      💼 GitHub
+                      </a>
+                    </p>
+                  </div>
+                </div>
+            </motion.div>
         </section>
         <section id="skills" className="min-h-screen bg-[#1b1b1b] flex items-center justify-center p-10">
           <p className="text-2xl">소개글이나 기술 스택</p>
