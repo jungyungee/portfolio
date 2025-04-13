@@ -132,8 +132,8 @@ export default function Home() {
                 </div>
             </motion.div>
         </section>
-        <section id="skills" className="min-h-screen bg-transparent flex flex-col items-center justify-center px-4 py-20 text-center font-bold font-mono">
-          <h2 className="text-4xl font-bold mb-12">🛠 기술 스택</h2>
+        <section id="skills" className="min-h-screen bg-transparent flex flex-col items-center justify-center px-4 py-20 text-center font-mono">
+          <h2 className="text-4xl font-bold mb-12">🛠 Skills</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
             {/* 카드 템플릿 */}
@@ -173,21 +173,21 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects" className="min-h-screen bg-transparent px-6 py-24 flex flex-col items-center gap-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl font-bold mb-2">🚀 Projects</h2>
-          <p className="text-white/80 text-lg">
-            개발 동아리 및 팀 프로젝트 등 개발에 참여한 프로젝트들을 소개합니다.
-          </p>
-        </motion.div>
+        <section id="projects" className="min-h-screen bg-transparent px-6 py-24 flex flex-col items-center gap-12 font-mono">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-2">🚀 Projects</h2>
+            <p className="text-white/80 text-lg">
+              개발 동아리 및 팀 프로젝트 등 개발에 참여한 프로젝트들을 소개합니다.
+            </p>
+          </motion.div>
           <ProjectShowcase
-            title="TotokTotok"
+            title="Totok Totok"
             description="주변 사람들이 “책을 읽고 싶어도 습관이 안 된다”는 고민에서 출발해, 독서 습관 형성을 돕는 모바일 앱을 기획·개발했습니다.
   Flutter로 구현된 이 앱은 사용자가 읽고 있는 책의 진행률을 시각화하고, 한 줄 리뷰와 읽은 페이지 수를 기록하며 동기를 부여합니다.
   교보문고 Open API를 활용해 책 정보를 자동으로 불러오고, 실시간 저장 기능과 직관적인 UI를 통해 사용성이 강조된 구조를 구현했습니다."
@@ -198,7 +198,7 @@ export default function Home() {
           />
 
           <ProjectShowcase
-            title="WOWMARKET"
+            title="WOW MARKET"
             description="대학별 굿즈 제작이 활발하지만 거래는 에브리타임, 오픈카톡 등에서 분산되어 이루어져 비효율적인 점에 주목했습니다.
   학생들이 직접 제작한 굿즈를 손쉽게 등록하고, 타겟 소비자(같은 학교 학생들)가 모여 사고팔 수 있는 대학 굿즈 전용 커머스 웹서비스를 기획 및 프론트엔드로 구현했습니다.
   학교별 상품 분류와 수요조사 기능을 도입해, 판매자는 정확한 타겟팅이 가능하고 구매자는 깔끔한 UI를 통해 손쉽게 탐색할 수 있도록 했습니다.

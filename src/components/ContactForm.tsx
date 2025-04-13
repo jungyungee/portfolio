@@ -32,7 +32,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={sendEmail}
-      className="flex flex-col gap-4 bg-white/10 p-6 rounded-xl backdrop-blur-md w-full max-w-xl text-white font-bold font-mono"
+      className="flex flex-col gap-4 bg-white/10 p-6 rounded-xl backdrop-blur-md w-full max-w-xl text-white font-mono"
     >
       <h3 className="text-2xl font-bold">📮 Contact Me</h3>
 
