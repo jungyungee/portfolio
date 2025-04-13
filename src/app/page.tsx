@@ -9,6 +9,7 @@ import { loadFull } from "tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { ChevronDown } from 'lucide-react';
 import ProjectShowcase from "@/components/ProjectShowcase";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.3 });
@@ -208,6 +209,9 @@ export default function Home() {
             reverse={true}
           />
         </section>
+      </div>
+      <div className="flex justify-center items-center min-h-screen px-4">
+        <ContactForm />
       </div>
       <footer className="bg-transparent text-white text-sm p-6 flex flex-col items-center space-y-2">
         <p>© 2025 Yungee Jung. All rights reserved.</p>
