@@ -88,18 +88,18 @@ export default function Home() {
           >
                 <div className="flex-shrink-0 flex justify-center sm:justify-start">
                   <Image
-                    src="/profile.JPG"
+                    src="/me.jpeg"
                     alt="정윤지 프로필"
                     width={260}
                     height={150}
-                    className="rounded-full border-4 shadow-lg object-cover"
+                    className="rounded-xl border-4 shadow-lg object-cover"
                   />
                 </div>
                 <div className="flex flex-col justify-center gap-4">
                   <h2 className="text-3xl font-bold">정윤지</h2>
                   <p className="text-lg leading-relaxed">
-                    안녕하세요! 프론트엔드, 모바일 개발자 정윤지입니다.<br />
-                    Next.js, TypeScript, React를 사용한 웹 프론트엔드와 Flutter를 사용한 모바일 앱 개발을 합니다.
+                    안녕하세요! 프론트엔드와 모바일 앱 개발을 중심으로 사용자 경험을 고민하는 개발자 정윤지입니다. <br />
+                    React, Next.js, TypeScript를 활용한 웹 프론트엔드 개발과 Flutter를 통한 모바일 앱 구축 경험을 바탕으로, 효율적이고 감각적인 인터페이스를 만드는 데 집중하고 있습니다.
                   </p>
                   <div className="text-sm text-white/80 mt-2 space-y-1">
                     <p className="px-4 py-2 text-black rounded-full bg-white w-fit">
@@ -178,7 +178,7 @@ Flutter로 구현된 이 앱은 사용자가 읽고 있는 책의 진행률을 �
 교보문고 Open API를 활용해 책 정보를 자동으로 불러오고, 실시간 저장 기능과 직관적인 UI를 통해 사용성이 강조된 구조를 구현했습니다."
           mediaType="image"
           mediaSrc="/todok_1.png"
-          techStack={['Flutter', 'Dart', 'Kyobo API']}
+          techStack={['Flutter', 'Dart']}
           reverse={false}
         />
 
