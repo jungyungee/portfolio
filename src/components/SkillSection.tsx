@@ -1,5 +1,5 @@
 import { FaReact, FaGithub, FaGitAlt, FaFigma, FaPython, FaUnity, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { SiNextdotjs, SiJavascript, SiTypescript, SiTailwindcss, SiDart, SiDotnet, SiMysql, SiFirebase, SiNotion } from 'react-icons/si';
+import { SiNextdotjs, SiJavascript, SiTypescript, SiTailwindcss, SiDart, SiDotnet, SiMysql, SiNotion } from 'react-icons/si';
 
 const skills = [
   {
