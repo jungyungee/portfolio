@@ -1,9 +1,7 @@
 {
-  "homepage": "https://jungyungee.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "framework": "nextjs",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
