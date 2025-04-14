@@ -10,6 +10,8 @@ import type { Engine } from "tsparticles-engine";
 import { ChevronDown } from 'lucide-react';
 import ProjectShowcase from "@/components/ProjectShowcase";
 import ContactForm from "@/components/ContactForm";
+import TechBadge from "@/components/TechBadge";
+import SkillsSection from "@/components/SkillSection";
 
 export default function Home() {
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.3 });
@@ -79,6 +81,7 @@ export default function Home() {
             <ChevronDown size={32} />
           </div>
         </section>
+        
         <section id="about" className="bg-transparent flex items-center justify-center px-4 py-24">
           <motion.div
             ref={aboutRef}
@@ -132,47 +135,13 @@ export default function Home() {
                 </div>
             </motion.div>
         </section>
-        <section id="skills" className="min-h-screen bg-transparent flex flex-col items-center justify-center px-4 py-20 text-center font-mono">
-          <h2 className="text-4xl font-bold mb-12">🛠 Skills</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
-            {/* 카드 템플릿 */}
-            <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">💻 Frontend</h3>
-              <ul className="text-sm text-white/90 space-y-1 leading-relaxed">
-                <li>React.js, Next.js</li>
-                <li>JavaScript, TypeScript</li>
-                <li>Tailwind CSS</li>
-                <li>HTML / CSS</li>
-              </ul>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">📱 Mobile</h3>
-              <ul className="text-sm text-white/90 space-y-1 leading-relaxed">
-                <li>Flutter</li>
-                <li>Dart</li>
-              </ul>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">🗄️ Others / DB</h3>
-              <ul className="text-sm text-white/90 space-y-1 leading-relaxed">
-                <li>ASP.NET</li>
-                <li>MS SQL Server</li>
-                <li>RESTful APIs</li>
-              </ul>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">⚙️ Tools & Etc.</h3>
-              <ul className="text-sm text-white/90 space-y-1 leading-relaxed">
-                <li>Git / GitHub, Notion, Figma</li>
-                <li>Unity (C#), Python</li>
-              </ul>
-            </div>
-          </div>
+        
+        <section
+          id="skills"
+          className="min-h-screen bg-transparent flex flex-col items-center justify-center px-4 py-24 text-center font-mono">
+          <SkillsSection />
         </section>
+
         <section id="projects" className="min-h-screen bg-transparent px-6 py-24 flex flex-col items-center gap-12 font-mono">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -196,7 +165,7 @@ export default function Home() {
             techStack={['Flutter', 'Dart']}
             reverse={false}
           />
-
+          <br />
           <ProjectShowcase
             title="WOW MARKET"
             description="대학별 굿즈 제작이 활발하지만 거래는 에브리타임, 오픈카톡 등에서 분산되어 이루어져 비효율적인 점에 주목했습니다.
@@ -206,6 +175,24 @@ export default function Home() {
             mediaType="video"
             mediaSrc="/videos/wowmarket_video.mp4"
             techStack={['React', 'JavaScript', 'CSS']}
+            reverse={true}
+          />
+          <br />
+          <ProjectShowcase
+            title="ESCAPE-T"
+            description="대학교 공학관(T동)을 배경으로 한 2D 퍼즐 방탈출 게임입니다. 플레이어는 건물 내 다양한 공간에서 단서를 수집하고 퍼즐을 해결하며 층별로 진행하게 됩니다. 전체 시나리오 기획부터 레벨 구성, 퍼즐 로직 설계, UI 흐름 등 개발의 전반적인 과정에 참여했으며, Unity와 C#을 사용해 상호작용과 연출을 구성했습니다. 해당 프로젝트로 교내 프로그래밍 대회에서 은상을 수상하였습니다."
+            mediaType="video"
+            mediaSrc="/videos/EscapeT.mp4"
+            techStack={['Unity', 'C#']}
+            reverse={false}
+          />
+          <br />
+          <ProjectShowcase
+            title="Witch's Room"
+            description="베를린 공대 Summer Uni 프로그램에서 진행한 VR 프로젝트. Unity와 C#을 사용해 VR 헤드셋 기반의 3D 방 탈출 게임을 개발했습니다. 팀원들과 함께 가상공간에서의 사용자 인터랙션, 이동 방식, 공간 인식 등에 대한 실험적인 구현을 시도했습니다."
+            techStack={['Unity', 'C#', 'Oculus Quest 2', 'VR UX']}
+            mediaType="image"
+            mediaSrc="/Berlin.png"
             reverse={true}
           />
         </section>
