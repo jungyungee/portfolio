@@ -1,15 +1,18 @@
 'use client';
 
 import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import emailjs from 'emailjs-com';
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState("");
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith("/en");
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus(isEnglish ? "Sending..." : "전송 중...");
 
     emailjs
       .sendForm(
@@ -19,12 +22,12 @@ export default function ContactForm() {
         'EoFfWJNA_5ku-1hYd'
       )
       .then(() => {
-        setStatus("✅ 메일이 성공적으로 전송되었습니다!");
+        setStatus(isEnglish ? "✅ Message sent successfully!" : "✅ 메일이 성공적으로 전송되었습니다!");
         formRef.current?.reset();
       })
       .catch((err) => {
         console.error(err);
-        setStatus("❌ 전송 중 오류가 발생했습니다.");
+        setStatus(isEnglish ? "❌ An error occurred while sending." : "❌ 전송 중 오류가 발생했습니다.");
       });
   };
 
@@ -34,25 +37,25 @@ export default function ContactForm() {
       onSubmit={sendEmail}
       className="flex flex-col gap-4 bg-white/10 p-6 rounded-xl backdrop-blur-md w-full max-w-xl text-white font-mono"
     >
-      <h3 className="text-2xl font-bold">📮 Contact Me</h3>
+      <h3 className="text-2xl font-bold">📮 {isEnglish ? "Contact Me" : "문의하기"}</h3>
 
       <input
         type="text"
         name="name"
-        placeholder="이름"
+        placeholder={isEnglish ? "Your Name" : "이름"}
         required
         className="px-4 py-2 rounded-md bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white transition resize-none"
       />
       <input
         type="email"
         name="email"
-        placeholder="이메일"
+        placeholder={isEnglish ? "Email Address" : "이메일"}
         required
-        className="px-4 py-2 rounded-md bg-white/10 text-whit placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white transition resize-none"
+        className="px-4 py-2 rounded-md bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white transition resize-none"
       />
       <textarea
         name="message"
-        placeholder="보내고 싶은 메시지를 입력하세요"
+        placeholder={isEnglish ? "Your Message" : "보내고 싶은 메시지를 입력하세요"}
         rows={5}
         required
         className="px-5 py-3 rounded-md bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white transition resize-none"
@@ -62,7 +65,7 @@ export default function ContactForm() {
         type="submit"
         className="bg-white/70 text-black px-5 py-2 rounded-md font-medium hover:bg-gray-200 transition"
       >
-        메일 보내기
+        {isEnglish ? "Send Email" : "메일 보내기"}
       </button>
 
       {status && <p className="text-sm mt-2">{status}</p>}
