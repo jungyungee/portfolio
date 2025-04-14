@@ -10,7 +10,6 @@ import type { Engine } from "tsparticles-engine";
 import { ChevronDown } from 'lucide-react';
 import ProjectShowcase from "@/components/ProjectShowcase";
 import ContactForm from "@/components/ContactForm";
-import TechBadge from "@/components/TechBadge";
 import SkillsSection from "@/components/SkillSection";
 
 export default function Home() {
