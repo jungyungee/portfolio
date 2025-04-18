@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "정윤지 포트폴리오",
-  description: "프론트엔드 개발자 정윤지의 포트폴리오입니다.",
+  description: "프론트엔드, 모바일 개발자 정윤지의 포트폴리오입니다.",
 };
 
 export default function RootLayout({
