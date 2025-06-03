@@ -1,38 +1,33 @@
-Portfolio web page (포트폴리오용 웹사이트)
+# 🌐 Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[👉 배포 링크 바로가기](https://jungyungeeportfolio.vercel.app)
 
-## Getting Started
+정윤지의 개발 포트폴리오입니다. 
+프론트엔드와 모바일 앱 개발을 중심으로, 다양한 프로젝트 경험과 기술 역량을 정리했습니다.
 
-First, run the development server:
+## 📌 기능 요약
+
+- 반응형 디자인
+- 자기소개 및 기술 스택 소개
+- 주요 프로젝트 포트폴리오 정리
+- 연락처 및 소셜 링크 제공, 메일 문의 가능
+
+## 🖥️ 스크린샷
+
+![포트폴리오 메인 화면](https://github.com/user-attachments/assets/aa2708ff-be1e-452a-bdbc-6d6bdf84ac9e/main.png)
+
+
+## 🛠️ 사용 기술
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Vercel (배포)
+
+## 🚀 로컬 실행
 
 ```bash
+git clone https://github.com/jungyungee/portfolio.git
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
