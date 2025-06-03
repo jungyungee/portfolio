@@ -14,7 +14,7 @@
 
 ## 🖥️ 스크린샷
 
-![포트폴리오 메인 화면](https://github.com/user-attachments/assets/aa2708ff-be1e-452a-bdbc-6d6bdf84ac9e/main.png)
+![포트폴리오 메인 화면](<img width="1470" alt="main" src="https://github.com/user-attachments/assets/aa2708ff-be1e-452a-bdbc-6d6bdf84ac9e" />)
 
 
 ## 🛠️ 사용 기술
